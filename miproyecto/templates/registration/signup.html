@@ -1,0 +1,44 @@
+<!-- templates/registration/signup.html -->
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+
+<!-- Section: Design Block -->
+<section class="min-vh-100" style="background: linear-gradient(to bottom, #4E98B8, #84BAC9, #ABCFD1, #BDDAE6);">
+  <div class="container pt-5">
+    <div class="card mx-auto" style="min-width: 500px; max-width: 900px;">
+      <div class="card-body">
+        <h2 class="card-title">Registrate</h2>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label class="form-label" for="id_username">Usuario:</label>
+            {{ form.username|add_class:"form-control form-control-lg" }}
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="id_email">Correo electrónico:</label>
+            {{ form.email|add_class:"form-control form-control-lg" }}
+          </div>
+      
+          <div class="form-group">
+            <label for="id_password1">Contraseña:</label>
+            {{ form.password1|add_class:"form-control form-control-lg" }}
+          </div>
+  
+          <div class="form-group">
+            <label for="id_password2">Confirma tu contraseña:</label>
+            {{ form.password2|add_class:"form-control form-control-lg" }}
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary mt-3">Registrar</button>
+          </div>
+    
+        </form>  
+      </div>
+    </div>
+  </div>
+</section> 
+{% endblock %}

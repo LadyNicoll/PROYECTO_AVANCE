@@ -1,0 +1,61 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<section class="min-vh-100" style="background: linear-gradient(to bottom, #4E98B8, #84BAC9, #ABCFD1, #BDDAE6);">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <img src="https://www.insurancenavy.com/images/what-does-excluded-driver-mean-on-a-car-insurance-policy.png"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">Prototipo de detección de somnolencia</h4>
+                </div>
+
+                <form method="post">
+                  {% csrf_token %}
+                  <p>Por favor, ingrese a su cuenta.</p>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example11">Usuario</label>
+                    {{ form.username|add_class:"form-control form-control-lg" }}
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form2Example22">Contraseña</label>
+                    {{ form.password|add_class:"form-control form-control-lg" }}
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block gradient-custom-2 mb-3 w-100" type="submit">Iniciar Sesión</button>
+                    <a class="text-muted" href="{% url 'password_reset' %}">¿Olvidaste tu contraseña?</a>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">¿No tienes una cuenta?</p>
+                    <a href="{% url 'signup' %}"><button type="button" class="btn btn-outline-dark">Registrate</button></a>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="col-md-6 px-0 d-none d-md-block">
+              <img src="https://images.unsplash.com/photo-1542176482-88bc4b4dbaf6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1419&q=80"
+                alt="Login image" class="img-fluid w-100 h-100" style="object-fit: cover; object-position: left;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

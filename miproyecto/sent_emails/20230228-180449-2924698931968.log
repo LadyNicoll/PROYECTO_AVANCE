@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: lmoncerratea@unemi.edu.ec
+Date: Tue, 28 Feb 2023 23:04:49 -0000
+Message-ID: <167762548942.3524.2832475756567583406@DESKTOP-LE3BDBR>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/MTE/bkcfk1-12d391d019ddb7a11cdc49088fddb8dd/
+
+Your username, in case you’ve forgotten: Lani
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

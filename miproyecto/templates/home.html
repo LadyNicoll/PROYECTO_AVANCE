@@ -1,0 +1,165 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <!--HOME INICIADO SESION-->
+<style>
+  .container{
+    background-image: url('https://images.unsplash.com/photo-1671726203454-5d7a5370a9f4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 35px;
+    padding-left: 8%;
+    padding-right: 8%;
+  } 
+
+.content{
+  margin-top: 10%;
+  max-width: 600px;
+}
+.content h2{
+  font-size: 60px
+}
+.content p{
+  margin-top: 10px;
+  line-height: 25px;
+}
+a{
+  color: #fff;
+}
+.link {
+  margin-top: 30px;
+}
+.hire{
+  color: #000;
+  text-decoration: none;
+  background: #fff;
+  padding: 9px 25px;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.5s;
+}
+.link .hire:hover{
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+</style>
+<section>
+  <div class="container" >
+    <div class="content">
+      <h2>Hola,<br>{{ user.username }}!</h2>
+      <p>Pulsa aquí ↓ para activar la detección.</p>
+    </div>
+    <div class="link">
+      <a href="{% url 'somnolencia' %}" class="hire">INICIAR</a>
+    </div>
+  </div>
+</section>
+  
+  {% comment %} <!--       -->
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>
+  <a href="{% url 'somnolencia' %}"><button type="button" class="btn btn-danger my_button">Iniciar deteccion</button></a>
+   {% endcomment %}
+  <!--HOME SIN INICIAR SESION-->
+  {% else %}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+    {% comment %} .custom-text h4 {
+      font-family: Gill Sans Extrabold, sans-serif;
+      color: #fff;
+      font-size: 54px;
+      font-weight: 700;
+    } {% endcomment %}
+    h4.custom-text {
+      font-family: 'Dancing Script', cursive;
+      font-style: italic;
+      font-size: 54px;
+      font-weight: 700;
+    }
+    h6.custom-text{
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 3px;
+      margin-top: 5px;
+    }
+    .main-white-button a {
+      font-size: 13px;
+      color: #fb5849;
+      background-color: #fff;
+      padding: 12px 25px;
+      display: inline-block;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: all .3s;
+  }
+  .main-white-button {
+    margin-right: 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  .main-white-button:last-of-type {
+    margin-right: 0;
+  }
+
+  .main-white-button a {
+    display: inline-block;
+    text-decoration: none;
+  }
+  </style>
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4 bg-primary text-white d-flex align-items-center justify-content-center">
+          <div class="inner-content text-center">
+            <h4 class="custom-text">Prototipo de Detección de Somnolencia</h4>
+            <h6 class="custom-text">THE BEST EXPERIENCE</h6>
+            {% comment %} <p class="custom-text">Aquí puedes agregar cualquier texto, imagen o contenido que desees mostrar en la primera columna.</p> {% endcomment %}
+            <div class="d-flex justify-content-center">
+              <div class="main-white-button scroll-to-section mr-2">
+                <a href="{% url 'login' %}">Iniciar sesión</a>
+              </div>
+              <div class="main-white-button scroll-to-section">
+                <a href="{% url 'signup' %}">Registrarse</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 px-0">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" data-bs-interval="10000">
+              <div class="carousel-item active">
+                <img src="https://colombianabroad.com/wp-content/uploads/seul-busan-feature.jpg" class="d-block w-100" alt="Imagen 1">
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="https://colombianabroad.com/wp-content/uploads/seul-busan-feature.jpg" class="d-block w-100" alt="Imagen 2">
+              </div>
+              <div class="carousel-item">
+                <img src="https://colombianabroad.com/wp-content/uploads/seul-busan-feature.jpg" class="d-block w-100" alt="Imagen 3">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+{% endblock %} 
